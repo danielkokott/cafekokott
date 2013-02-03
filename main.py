@@ -28,5 +28,11 @@ class MainPage(webapp2.RequestHandler):
         template = jinja_environment.get_template('web/workinprogress.html')
         self.response.out.write(template.render())
 
-app = webapp2.WSGIApplication([('/', MainPage)],
-                              debug=True)
+class TestPage(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('web/index.html')
+        self.response.out.write(template.render())
+
+app = webapp2.WSGIApplication([ ('/', MainPage),
+                                ('/test', TestPage)],
+                                debug=True)
