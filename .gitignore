@@ -1,5 +1,6 @@
 ### Daniel
 *.sublime-workspace
+node_modules
 
 #################
 ## Eclipse
