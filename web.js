@@ -3,6 +3,7 @@ var app = express();
 app.use(express.logger());
 
 app.use("/static", express.static("./static"));
+app.use("/bootstrap", express.static("./bootstrap"));
 
 app.get('/', function(request, response) {
 	response.sendfile('./web/workinprogress.html');
